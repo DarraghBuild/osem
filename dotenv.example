@@ -50,7 +50,7 @@
 
 # The api key for transifex.com.
 # See https://github.com/openSUSE/osem/wiki/Translation
-# OSEM_TRANSIFEX_APIKEY=1234
+# OSEM_TRANSIFEX_APIKEY=cf866a61277842b39c897c5a0b5ec075
 
 # sentry.io DSN key
 # OSEM_SENTRY_DSN=1234
