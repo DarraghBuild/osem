@@ -2,24 +2,24 @@
   .row
     .col-md-12
       .page-header
-        %h1 Edit your profile
+        %h1 Editar tu perfil
   .row
     .col-md-12
       = semantic_form_for(@user, url: user_path(@user.id)) do |f|
-        = f.input :name, as: :string, hint: 'This is your real name.'
-        = f.input :nickname, as: :string, hint: 'This is how the other users see you, not your real name'
+        = f.input :name, as: :string, hint: 'Este es tu nombre completo'
+        = f.input :nickname, as: :string, hint: 'Es como te visualizaran los otros usuarios, no es tu nombre real'
         .control-label
           = "Avatar"
         = image_tag(@user.gravatar_url(size: '48'), title: "Yo #{@user.name}!", alt: '')
-        = link_to 'Change your avatar here', 'https://gravatar.com'
+        = link_to 'Cambia tu avatar aqui', 'https://gravatar.com'
         = f.input :affiliation, as: :string,
-          hint: 'This could be a company, a user group, or nothing at all.'
+          hint: 'Esto puede ser un emprendimiento, una compañia o un grupo.'
         = f.input :biography, input_html: { rows: 5, data: { provide: 'markdown' } },
           hint: markdown_hint
-        You have used
+        Tu has usado
         %span#bio_length
           = @user.biography ? @user.biography.split.length : 0
-        words.  Biographies are limited to 150 words.
+        words.  Biografias estan limitadas a 150 carácteres.
         %br
         %br
-        = f.action :submit, as: :button, label: 'Update', button_html: {class: 'btn btn-primary'}
+        = f.action :submit, as: :button, label: 'Actualizar', button_html: {class: 'btn btn-primary'}
